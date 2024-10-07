@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Server Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 20px;
+            cursor: pointer;
+        }
+        .status {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minecraft Server Control Panel</h1>
+    <p class="status">Server Status: <strong>{{ status }}</strong></p>
+
+    {% if status == "OFF" %}
+        <button onclick="location.href='/start'">Start Server</button>
+    {% elif status == "ON" %}
+        <button onclick="location.href='/stop'">Stop Server</button>
+    {% endif %}
+</body>
+</html>
