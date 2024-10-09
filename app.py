@@ -24,13 +24,13 @@ def index():
 @app.route('/start')
 def start_server():
     run_systemctl_command('start')
-    return redirect(url_for('web_form'))
+    return redirect(url_for('index'))
 
 
 @app.route('/stop')
 def stop_server():
     run_systemctl_command('stop')
-    return redirect(url_for('web_form'))
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
